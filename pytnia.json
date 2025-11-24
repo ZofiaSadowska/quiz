@@ -1,0 +1,54 @@
+{
+  "questions": [
+    {
+      "question": "Kiedy jest Boże Narodzenie?",
+      "answers": [
+        "26.12",
+        "24.12",
+        "25.12",
+        "30.12"
+      ],
+      "correct": "25.12"
+    },
+    {
+      "question": "Skąd wywodzi się tradycja ubierania choinek?",
+      "answers": [
+        "Polska",
+        "Niemcy",
+        "Finlandia",
+        "Alzacja"
+      ],
+      "correct": "Alzacja"
+    },
+    {
+      "question": "Ile według tradycji powinno byc potraw w wigilie?",
+      "answers": [
+        "10",
+        "Jak najwięcej",
+        "12",
+        "33"
+      ],
+      "correct": "12"
+    },
+    {
+      "question": "Ile trwa adwent?",
+      "answers": [
+        "około 4 tygodnie (4 niedziele)",
+        "cały grudzień",
+        "około 3 tygodnie (3 niedziele)",
+        "od Wszystkich Świętych"
+      ],
+      "correct": "około 4 tygodnie (4 niedziele)"
+    },
+    {
+      "question": "pibble",
+      "answers": [
+        "pib",
+        "peb",
+        "pibbl",
+        "pibble"
+      ],
+      "correct": "pibble"
+    }
+  ]
+}
