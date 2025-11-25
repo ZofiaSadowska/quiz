@@ -1,10 +1,24 @@
 using System.Collections.ObjectModel;
+using Microsoft.Maui.Graphics;
+using System.Text.Json;
+
 
 namespace quiz;
 
 public partial class QuizPage : ContentPage
 {
-    private string filePath = Path.Combine(FileSystem.AppDataDirectory, "pytnia.json");
+    public async Task<QuestionSet> LoadQuestions()
+    {
+        using var stream = await FileSystem.OpenAppPackageFileAsync("pytnia.json");
+        using var reader = new StreamReader(stream);
+
+        string json = reader.ReadToEnd();
+
+        return JsonSerializer.Deserialize<QuestionSet>(json);
+    }
+
+    private List<Question> questions;
+    int currentIndex = 0;
 
     public QuizPage( )
 	{
@@ -19,6 +33,7 @@ public partial class QuizPage : ContentPage
         {
             player_name.Text = Player.Instance.Player2Name;
         }
+        LoadAndStart();
 
     }
     bool whichPlayer = false;
@@ -36,23 +51,29 @@ public partial class QuizPage : ContentPage
 
     }
 
-    
-
-
-
-
-
-
-
-
-
+    private async void LoadAndStart()
+    {
+        var data = await LoadQuestions();
+        questions = data.Questions;
+        var q = questions[currentIndex];
+        var buttons = new List<Button> { button1, button2, button3, button4 };
+        question.Text = q.QuestionText;
+        for (int i = 0; i < buttons.Count; i++)
+        {
+            if (i < q.Answers.Count)
+            {
+                buttons[i].Text = q.Answers[i];
+                buttons[i].BackgroundColor = Color.FromArgb("#D9D9D9");
+            }    
+        }
+    }
     private void A_Clicked(object sender, EventArgs e)
     {
         if (whichAnswer == true) { }
         else
         {
             whichAnswer = true;
-            A.BackgroundColor = System.Drawing.Color.FromHtml("#E54F6D");
+            button1.BackgroundColor = Color.FromArgb("#E54F6D");
         }
         
     }
@@ -63,7 +84,7 @@ public partial class QuizPage : ContentPage
         else
         {
             whichAnswer = true;
-            A.BackgroundColor = "#E54F6D";
+            button2.BackgroundColor = Color.FromArgb("#E54F6D");
         }
     }
 
@@ -73,7 +94,7 @@ public partial class QuizPage : ContentPage
         else
         {
             whichAnswer = true;
-            A.BackgroundColor = "#E54F6D";
+            button3.BackgroundColor = Color.FromArgb("#E54F6D");
         }
     }
 
@@ -83,7 +104,7 @@ public partial class QuizPage : ContentPage
         else
         {
             whichAnswer = true;
-            A.BackgroundColor = "#E54F6D";
+            button4.BackgroundColor = Color.FromArgb("#E54F6D");
         }
     }
 }

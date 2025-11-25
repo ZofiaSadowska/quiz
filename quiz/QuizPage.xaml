@@ -41,7 +41,7 @@
             <Button
                 WidthRequest="300"
                     Margin="10,0,0,0"
-                      x:Name="A"
+                      x:Name="button1"
                       Text="A. Lorem ipsum dolor sit amet consectetur."                
                       HorizontalOptions="Fill" 
                       BackgroundColor="#D9D9D9"
@@ -54,7 +54,7 @@
             <Button
                 WidthRequest="300"
                 Margin="10,0,0,0"
-                x:Name="B"
+                x:Name="button2"
                 Text="B. Lorem ipsum dolor sit amet consectetur."                
                 HorizontalOptions="Fill" 
                 BackgroundColor="#D9D9D9"
@@ -66,7 +66,7 @@
             <Button
                 WidthRequest="300"
                 Margin="10,0,0,0"
-                x:Name="C"
+                x:Name="button3"
                 Text="C. Lorem ipsum dolor sit amet consectetur."                
                 HorizontalOptions="Fill" 
                 BackgroundColor="#D9D9D9"
@@ -78,7 +78,7 @@
             <Button
                 WidthRequest="300"
                 Margin="10,0,0,0"
-                x:Name="D"
+                x:Name="button4"
                 Text="D. Lorem ipsum dolor sit amet consectetur."                
                 HorizontalOptions="Fill" 
                 BackgroundColor="#D9D9D9"
