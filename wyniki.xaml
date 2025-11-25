@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp8.MainPage"
+             BackgroundColor="#724E91">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+          
+            <Label
+                x:Name="LiderBoard"
+                Text="Lider board"
+                TextColor="#F8C630"
+                FontSize="40"
+                FontAttributes="Bold"
+              HorizontalOptions="Center"
+                Margin="0,40,0,0"
+               Shadow="#401A50, 5,5"
+                />
+
+
+            <Border BackgroundColor="#451F55"                       
+                       Padding="18" 
+                    HeightRequest="600"
+                    Stroke="Transparent">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20" />
+
+                </Border.StrokeShape>
+               
+                    <VerticalStackLayout>
+                    <Border Padding="0" Margin="0,0,0,50"
+                               BackgroundColor="#D9D9D9"
+                               
+                               HeightRequest="44">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="20"/>
+                        </Border.StrokeShape>
+                        
+                        <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                            <Label FontSize="20" FontAttributes="Bold" TextColor="#EDB856" Text="1."></Label>
+                            <Label FontSize="20" x:Name="wyniki_1" Text="Lorem ipsum." TextColor="#22162B"></Label>
+                        </HorizontalStackLayout>
+                        
+                       
+                    </Border>
+
+                    
+                    <Border Padding="0" Margin="0,0,0,50"
+            BackgroundColor="#D9D9D9"            
+            HeightRequest="44">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="20"/>
+                        </Border.StrokeShape>
+
+                        <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                            <Label FontSize="20" FontAttributes="Bold" TextColor="#838383" Text="2."></Label>
+                            <Label FontSize="20" x:Name="wyniki_2" Text="Lorem ipsum." TextColor="#22162B"></Label>
+                        </HorizontalStackLayout>
+
+
+                    </Border>
+                    </VerticalStackLayout>
+                
+            </Border>
+
+          
+            <Button
+                             x:Name="NewGame"
+                             Text="New Game"   
+                Clicked="NewGame_Clicked"
+                WidthRequest="300"
+                             HorizontalOptions="Fill" 
+                             BackgroundColor="#F8C630"
+                             TextColor="#451F55"
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            CornerRadius="20"
+                Shadow="#401A50, 10,10"/> 
+
+
+
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
