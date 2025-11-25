@@ -1,118 +1,86 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="quiz.NewGame"
-    Shell.NavBarIsVisible="False">
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="quiz.NewGame"
+             BackgroundColor="#724E91">
 
-    <Grid>
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
 
-        
-        <Grid.Background>
-            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                <GradientStop Color="#8E4BCF" Offset="0.0"/>
-                <GradientStop Color="#6B2E9B" Offset="1.0"/>
-            </LinearGradientBrush>
-        </Grid.Background>
+            <ImageButton x:Name="cofinij" Source="cofnij.png" Clicked="Cofnij_Clicked" HorizontalOptions="Start"></ImageButton>
+            <Label
+                Text="New game"
+                TextColor="#E54F6D"
+                FontSize="40"
+                FontAttributes="Bold"
+              HorizontalOptions="Center"/>
 
-        <Grid Padding="20,48,20,0" RowDefinitions="Auto,*">
+            <Border BackgroundColor="#451F55"                       
+                       Padding="18" 
+                    HeightRequest="600"
+                    Stroke="Transparent">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20" />
 
-            
-            <Grid ColumnDefinitions="60,*" VerticalOptions="Start">
+                </Border.StrokeShape>
+                <StackLayout Spacing="14" VerticalOptions="Center">
 
-                
-                <Border
-                    Grid.Column="0"
-                    HeightRequest="44"
-                    WidthRequest="44"
-                    CornerRadius="22"
-                    BackgroundColor="#FFD43B"
-                    HasShadow="False"
-                    VerticalOptions="Center"
-                    HorizontalOptions="Start"
-                    Padding="0">
-                    <Label Text="←"
-                           FontSize="20"
-                           FontAttributes="Bold"
-                           HorizontalOptions="Center"
-                           VerticalOptions="Center"
-                           TextColor="Black"/>
-                </Border>
 
-                
-                <Label Grid.Column="1"
-                       Text="New game"
-                       FontSize="22"
-                       FontAttributes="Bold"
-                       VerticalOptions="Center"
-                       HorizontalOptions="Start"
-                       Margin="12,0,0,0"
-                       TextColor="White"/>
-            </Grid>
-
-            
-            <StackLayout Grid.Row="1"
-                         Padding="20,30"
-                         Spacing="20"
-                         VerticalOptions="Start">
-
-                <Frame BackgroundColor="#4A1F63"
-                       CornerRadius="18"
-                       Padding="18"
-                       HasShadow="True"
-                       HorizontalOptions="FillAndExpand">
-
-                    <StackLayout Spacing="14">
-
-                        
-                        <Label Text="Player 1's name"
-                               FontSize="14"
+                    <Label Text="Player 1's name"
+                               FontSize="19"
                                FontAttributes="Bold"
-                               TextColor="#FFD43B"/>
+                               TextColor="#F8C630"/>
 
-                        <Border Padding="0"
-                               BackgroundColor="White"
-                               CornerRadius="22"
+                    <Border Padding="0" Margin="0,0,0,50"
+                               BackgroundColor="#D9D9D9"                               
                                HeightRequest="44">
-                            <Entry Placeholder="Enter name"
-                                   PlaceholderColor="#9A9A9A"
-                                   VerticalOptions="Center"
-                                   Padding="16,0"/>
-                        />
-
                         
-                        <Label Text="Player 2's name"
-                               FontSize="14"
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="20"/>
+                        </Border.StrokeShape>
+                        <Entry Placeholder="Enter name"
+                               PlaceholderColor="#9A9A9A"
+                               VerticalOptions="Center"
+                               x:Name="player1Entry"
+                               BackgroundColor="Transparent"/>
+                    </Border>
+
+
+                    <Label Text="Player 2's name"
+                               FontSize="19"
                                FontAttributes="Bold"
-                               TextColor="#FFD43B"/>
+                               TextColor="#F8C630"/>
 
-                        <Border Padding="0"
-                               BackgroundColor="White"
-                               CornerRadius="22"
+                    <Border Padding="0" Margin="0,0,0,60"
+                               BackgroundColor="#D9D9D9"                               
                                HeightRequest="44">
-                            <Entry Placeholder="Enter name"
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="20"/>
+                        </Border.StrokeShape>
+                        <Entry Placeholder="Enter name"
+                               x:Name="player2Entry"
                                    PlaceholderColor="#9A9A9A"
-                                   VerticalOptions="Center"
-                                   Padding="16,0"/>
-                        />
+                                   VerticalOptions="Center"/>
+                    </Border>
 
-                        
-                        <Button Text="Submit"
-                                BackgroundColor="#FFD43B"
-                                TextColor="Black"
-                                FontAttributes="Bold"
-                                CornerRadius="24"
-                                HeightRequest="48"
-                                WidthRequest="180"
-                                HorizontalOptions="Center"/>
+                    <Button
+                         x:Name="Submit"
+                         Text="Submit"                
+                         HorizontalOptions="Fill" 
+                         BackgroundColor="#F8C630"
+                         Clicked="Submit_Clicked"
+                         TextColor="#451F55"
+                         FontAttributes="Bold"
+                         FontSize="20"
+                         CornerRadius="20"/>
 
-                    </StackLayout>
-                </Border>
 
-            </StackLayout>
+                </StackLayout>
+            </Border>
 
-        </Grid>
 
-    </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
 
 </ContentPage>
