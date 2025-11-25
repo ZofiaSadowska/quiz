@@ -18,6 +18,7 @@
                 FontAttributes="Bold"
               HorizontalOptions="Start"
                 Margin="40,0,0,0"
+               Shadow="#401A50, 5,5"
                 />
 
             <Border BackgroundColor="#D9D9D9"                       
@@ -29,8 +30,10 @@
                     Stroke="Transparent">
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="20" />
-
                 </Border.StrokeShape>
+                <Border.Shadow>
+                    <Shadow Brush="#401A50" Offset="10,10"/>
+                </Border.Shadow>
                 <Label x:Name="question" Text="Lorem ipsum dolor sit amet consectetur adipiscing elit. Amet consectetur adipiscing elit quisque faucibus ex sapien. Quisque faucibus ex sapien vitae pellentesque sem placerat. Vitae pellentesque sem placerat in id cursus mi."
                        FontSize="15" TextColor="#451F55" FontAttributes="Bold"/>
             </Border>
@@ -43,7 +46,7 @@
                       HorizontalOptions="Fill" 
                       BackgroundColor="#D9D9D9"
                       Clicked="A_Clicked"
-                      TextColor="#451F55"
+                      TextColor="Black"
                      FontSize="15"
                      CornerRadius="20"
                 />
@@ -56,7 +59,7 @@
            HorizontalOptions="Fill" 
            BackgroundColor="#D9D9D9"
            Clicked="B_Clicked"
-           TextColor="#451F55"
+           TextColor="Black"
           FontSize="15"
           CornerRadius="20"/>
 
@@ -68,7 +71,7 @@
            HorizontalOptions="Fill" 
            BackgroundColor="#D9D9D9"
            Clicked="C_Clicked"
-           TextColor="#451F55"
+           TextColor="Black"
           FontSize="15"
           CornerRadius="20"/>
 
@@ -80,7 +83,7 @@
            HorizontalOptions="Fill" 
            BackgroundColor="#D9D9D9"
            Clicked="D_Clicked"
-           TextColor="#451F55"
+           TextColor="Black"
           FontSize="15"
           CornerRadius="20"/>
 
@@ -94,7 +97,8 @@
                              TextColor="#451F55"
                             FontAttributes="Bold"
                             FontSize="20"
-                            CornerRadius="20"/> 
+                            CornerRadius="20"
+                Shadow="#401A50, 10,10"/> 
 
 
 
