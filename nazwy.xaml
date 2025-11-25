@@ -2,104 +2,96 @@
 <ContentPage
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="YourApp.NewGamePage"
-    Shell.NavBarIsVisible="False">
+    x:Class="MauiApp8.MainPage"
+    Shell.NavBarIsVisible="False"
+    BackgroundColor="#724E91">
 
-    <Grid>
+    <VerticalStackLayout>
 
-        <!-- Gradientowe tło -->
-        <Grid.Background>
-            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                <GradientStop Color="#8E4BCF" Offset="0.0"/>
-                <GradientStop Color="#6B2E9B" Offset="1.0"/>
-            </LinearGradientBrush>
-        </Grid.Background>
-
-        <Grid Padding="20,48,20,0" RowDefinitions="Auto,*">
-
-            <!-- Pasek tytułu -->
-            <Grid ColumnDefinitions="60,*" VerticalOptions="Start">
-
-                <!-- Back -->
-                <Frame
-                    Grid.Column="0"
+        <Border
+                    
                     HeightRequest="44"
                     WidthRequest="44"
-                    CornerRadius="22"
-                    BackgroundColor="#FFD43B"
-                    HasShadow="False"
+                                  
+                    BackgroundColor="#F8C630"
                     VerticalOptions="Center"
                     HorizontalOptions="Start"
                     Padding="0">
-                    <Label Text="←"
+            <Label Text="←"
                            FontSize="20"
                            FontAttributes="Bold"
                            HorizontalOptions="Center"
                            VerticalOptions="Center"
-                           TextColor="Black"/>
-                </Frame>
+                           TextColor="#E54F6D"/>
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="20"/>
+            </Border.StrokeShape>
+        </Border>
 
-                <!-- New game -->
-                <Label Grid.Column="1"
+
+        <Label 
                        Text="New game"
                        FontSize="22"
                        FontAttributes="Bold"
                        VerticalOptions="Center"
                        HorizontalOptions="Start"
                        Margin="12,0,0,0"
-                       TextColor="White"/>
-            </Grid>
+                       TextColor="#E54F6D"/>
 
-            <!-- Karta z polami -->
-            <StackLayout Grid.Row="1"
+    </VerticalStackLayout>
+
+    <StackLayout 
                          Padding="20,30"
                          Spacing="20"
                          VerticalOptions="Start">
 
-                <Frame BackgroundColor="#4A1F63"
-                       CornerRadius="18"
-                       Padding="18"
-                       HasShadow="True"
-                       HorizontalOptions="FillAndExpand">
-
+                <Border BackgroundColor="#451F55"                       
+                       Padding="18" >
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="20"/>
+                    </Border.StrokeShape>
                     <StackLayout Spacing="14">
 
-                        <!-- Player 1 -->
+                        
                         <Label Text="Player 1's name"
                                FontSize="14"
                                FontAttributes="Bold"
-                               TextColor="#FFD43B"/>
+                               TextColor="#F8C630"/>
 
-                        <Frame Padding="0"
-                               BackgroundColor="White"
-                               CornerRadius="22"
+                        <Border Padding="0"
+                               BackgroundColor="#D9D9D9"
+                               
                                HeightRequest="44">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="20"/>
+                            </Border.StrokeShape>
                             <Entry Placeholder="Enter name"
                                    PlaceholderColor="#9A9A9A"
-                                   VerticalOptions="Center"
-                                   Padding="16,0"/>
-                        </Frame>
+                                   VerticalOptions="Center"/>
+                        </Border>
 
-                        <!-- Player 2 -->
+                        
                         <Label Text="Player 2's name"
                                FontSize="14"
                                FontAttributes="Bold"
-                               TextColor="#FFD43B"/>
+                               TextColor="#F8C630"/>
 
-                        <Frame Padding="0"
-                               BackgroundColor="White"
-                               CornerRadius="22"
+                        <Border Padding="0"
+                               BackgroundColor="#D9D9D9"
+                               
                                HeightRequest="44">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="20"/>
+                            </Border.StrokeShape>
                             <Entry Placeholder="Enter name"
                                    PlaceholderColor="#9A9A9A"
-                                   VerticalOptions="Center"
-                                   Padding="16,0"/>
-                        </Frame>
+                                   VerticalOptions="Center"/>
+                        </Border>
 
-                        <!-- Submit button -->
+                      
                         <Button Text="Submit"
-                                BackgroundColor="#FFD43B"
-                                TextColor="Black"
+                                BackgroundColor="#F8C630"
+                                TextColor="#451F55"
                                 FontAttributes="Bold"
                                 CornerRadius="24"
                                 HeightRequest="48"
@@ -107,12 +99,7 @@
                                 HorizontalOptions="Center"/>
 
                     </StackLayout>
-                </Frame>
+                </Border>
 
             </StackLayout>
-
-        </Grid>
-
-    </Grid>
-
-</ContentPage>
+     
