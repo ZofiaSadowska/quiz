@@ -5,7 +5,6 @@ namespace quiz;
 public partial class NewGame : ContentPage
 {
    
-    //private string filePath = Path.Combine(FileSystem.AppDataDirectory, "pytnia.json");
     public NewGame()
 	{
         InitializeComponent();
@@ -13,8 +12,8 @@ public partial class NewGame : ContentPage
 
     private async void Submit_Clicked(object sender, EventArgs e)
     {
-        //Player.Instance.Player1Name = player1Entry.Text;
-        //Player.Instance.Player2Name = player2Entry.Text;
+        Player.Instance.Player1Name = player1Entry.Text;
+        Player.Instance.Player2Name = player2Entry.Text;
         await Navigation.PushAsync(new QuizPage());
     }
 
