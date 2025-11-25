@@ -1,105 +1,88 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="MauiApp8.MainPage"
-    Shell.NavBarIsVisible="False"
-    BackgroundColor="#724E91">
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp8.MainPage"
+             BackgroundColor="#724E91">
 
-    <VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
 
-        <Border
+            <ImageButton x:Name="cofinij" Source="cofnij.png" Clicked="cofnij_Clicked" HorizontalOptions="Start"></ImageButton>
+            <Label
+                Text="New game"
+                TextColor="#E54F6D"
+                FontSize="40"
+                FontAttributes="Bold"
+              HorizontalOptions="Center"
+  
+                />
+
+            <Border BackgroundColor="#451F55"                       
+                       Padding="18" 
+                    HeightRequest="600"
+                    Stroke="Transparent">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20" />
                     
-                    HeightRequest="44"
-                    WidthRequest="44"
-                                  
-                    BackgroundColor="#F8C630"
-                    VerticalOptions="Center"
-                    HorizontalOptions="Start"
-                    Padding="0">
-            <Label Text="←"
-                           FontSize="20"
-                           FontAttributes="Bold"
-                           HorizontalOptions="Center"
-                           VerticalOptions="Center"
-                           TextColor="#E54F6D"/>
-            <Border.StrokeShape>
-                <RoundRectangle CornerRadius="20"/>
-            </Border.StrokeShape>
-        </Border>
+                </Border.StrokeShape>
+                <StackLayout Spacing="14" VerticalOptions="Center">
 
 
-        <Label 
-                       Text="New game"
-                       FontSize="22"
-                       FontAttributes="Bold"
-                       VerticalOptions="Center"
-                       HorizontalOptions="Start"
-                       Margin="12,0,0,0"
-                       TextColor="#E54F6D"/>
-
-    </VerticalStackLayout>
-
-    <StackLayout 
-                         Padding="20,30"
-                         Spacing="20"
-                         VerticalOptions="Start">
-
-                <Border BackgroundColor="#451F55"                       
-                       Padding="18" >
-                    <Border.StrokeShape>
-                        <RoundRectangle CornerRadius="20"/>
-                    </Border.StrokeShape>
-                    <StackLayout Spacing="14">
-
-                        
-                        <Label Text="Player 1's name"
-                               FontSize="14"
+                    <Label Text="Player 1's name"
+                               FontSize="19"
                                FontAttributes="Bold"
                                TextColor="#F8C630"/>
 
-                        <Border Padding="0"
+                    <Border Padding="0" Margin="0,0,0,50"
                                BackgroundColor="#D9D9D9"
                                
                                HeightRequest="44">
-                            <Border.StrokeShape>
-                                <RoundRectangle CornerRadius="20"/>
-                            </Border.StrokeShape>
-                            <Entry Placeholder="Enter name"
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="20"/>
+                        </Border.StrokeShape>
+                        <Entry Placeholder="Enter name"
                                    PlaceholderColor="#9A9A9A"
-                                   VerticalOptions="Center"/>
-                        </Border>
+                                   VerticalOptions="Center"
+                               BackgroundColor="Transparent"/>
+                    </Border>
 
-                        
-                        <Label Text="Player 2's name"
-                               FontSize="14"
+
+                    <Label Text="Player 2's name"
+                               FontSize="19"
                                FontAttributes="Bold"
                                TextColor="#F8C630"/>
 
-                        <Border Padding="0"
+                    <Border Padding="0" Margin="0,0,0,60"
                                BackgroundColor="#D9D9D9"
                                
                                HeightRequest="44">
-                            <Border.StrokeShape>
-                                <RoundRectangle CornerRadius="20"/>
-                            </Border.StrokeShape>
-                            <Entry Placeholder="Enter name"
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="20"/>
+                        </Border.StrokeShape>
+                        <Entry Placeholder="Enter name"
                                    PlaceholderColor="#9A9A9A"
                                    VerticalOptions="Center"/>
-                        </Border>
+                    </Border>
 
-                      
-                        <Button Text="Submit"
-                                BackgroundColor="#F8C630"
-                                TextColor="#451F55"
-                                FontAttributes="Bold"
-                                CornerRadius="24"
-                                HeightRequest="48"
-                                WidthRequest="180"
-                                HorizontalOptions="Center"/>
+                    <Button
+     x:Name="Submit"
+     Text="Submit"                
+     HorizontalOptions="Fill" 
+     BackgroundColor="#F8C630"
+     Clicked="Submit_Clicked"
+     TextColor="#451F55"
+      FontAttributes="Bold"
+                        FontSize="20"
+                        CornerRadius="20"/>
 
-                    </StackLayout>
-                </Border>
 
-            </StackLayout>
-     
+                </StackLayout>
+            </Border>
+
+           
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
