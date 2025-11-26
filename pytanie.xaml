@@ -9,91 +9,101 @@
             Padding="30,0"
             Spacing="25">
 
-            <ImageButton x:Name="cofinij" Source="cofnij.png" Clicked="cofnij_Clicked" HorizontalOptions="Start"></ImageButton>
+          
             <Label
-                x:Name="player_name"
-                Text="Player name"
-                TextColor="#E54F6D"
+                x:Name="LiderBoard"
+                Text="Lider board"
+                TextColor="#F8C630"
                 FontSize="40"
                 FontAttributes="Bold"
-              HorizontalOptions="Start"
-                Margin="40,0,0,0"
+              HorizontalOptions="Center"
+                Margin="0,40,0,0"
                Shadow="#401A50, 5,5"
                 />
 
-            <Border BackgroundColor="#D9D9D9"                       
+
+            <Border BackgroundColor="#451F55"                       
                        Padding="18" 
-                    
-                    WidthRequest="300"
-                    Margin="10"
-                    
+                    HeightRequest="300"
+                  
                     Stroke="Transparent">
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="20" />
+
                 </Border.StrokeShape>
                 <Border.Shadow>
                     <Shadow Brush="#401A50" Offset="10,10"/>
                 </Border.Shadow>
-                <Label x:Name="question" Text="Lorem ipsum dolor sit amet consectetur adipiscing elit. Amet consectetur adipiscing elit quisque faucibus ex sapien. Quisque faucibus ex sapien vitae pellentesque sem placerat. Vitae pellentesque sem placerat in id cursus mi."
-                       FontSize="15" TextColor="#451F55" FontAttributes="Bold"/>
+                <VerticalStackLayout   VerticalOptions="Center">
+                    <HorizontalStackLayout>
+                        <Border Padding="0" Margin="0,0,10,50"
+                               BackgroundColor="#D9D9D9"
+                               
+                               HeightRequest="44"
+                                WidthRequest="250">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="20"/>
+                        </Border.StrokeShape>
+                        
+                        <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                            <Label FontSize="20" FontAttributes="Bold" TextColor="#EDB856" Text="1."></Label>
+                            <Label FontSize="20" x:Name="wyniki_1" Text="Lorem ipsum." TextColor="#22162B"></Label>
+                        </HorizontalStackLayout>
+                        
+                       
+                    </Border>
+                        <Border Padding="0" Margin="0,0,0,50"
+                                BackgroundColor="#D9D9D9"            
+                                   HeightRequest="44"
+                                WidthRequest="44">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="20"/>
+                            </Border.StrokeShape>
+                            <Label VerticalOptions="Center" HorizontalOptions="Center" FontSize="20" x:Name="punkty_1" FontAttributes="Bold" TextColor="Black" Text="0"></Label>
+                        </Border>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout>
+                        <Border Padding="0" Margin="0,0,10,50"
+            BackgroundColor="#D9D9D9"
+            
+            HeightRequest="44"
+             WidthRequest="250">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="20"/>
+                            </Border.StrokeShape>
+
+                            <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                                <Label FontSize="20" FontAttributes="Bold" TextColor="#838383" Text="2."></Label>
+                                <Label FontSize="20" x:Name="wyniki_2" Text="Lorem ipsum." TextColor="#22162B"></Label>
+                            </HorizontalStackLayout>
+
+
+                        </Border>
+                        <Border Padding="0" Margin="0,0,0,50"
+             BackgroundColor="#D9D9D9"            
+                HeightRequest="44"
+             WidthRequest="44">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="20"/>
+                            </Border.StrokeShape>
+                            <Label VerticalOptions="Center" HorizontalOptions="Center" FontSize="20" x:Name="punkty_2" FontAttributes="Bold" TextColor="Black" Text="0"></Label>
+                        </Border>
+                    </HorizontalStackLayout>
+
+
+                </VerticalStackLayout>
+                
             </Border>
 
+          
             <Button
-                WidthRequest="300"
-                    Margin="10,0,0,0"
-                      x:Name="A"
-                      Text="A. Lorem ipsum dolor sit amet consectetur."                
-                      HorizontalOptions="Fill" 
-                      BackgroundColor="#D9D9D9"
-                      Clicked="A_Clicked"
-                      TextColor="Black"
-                     FontSize="15"
-                     CornerRadius="20"
-                />
-
-            <Button
-                WidthRequest="300"
-    Margin="10,0,0,0"
-           x:Name="B"
-           Text="B. Lorem ipsum dolor sit amet consectetur."                
-           HorizontalOptions="Fill" 
-           BackgroundColor="#D9D9D9"
-           Clicked="B_Clicked"
-           TextColor="Black"
-          FontSize="15"
-          CornerRadius="20"/>
-
-            <Button
-                WidthRequest="300"
-    Margin="10,0,0,0"
-           x:Name="C"
-           Text="C. Lorem ipsum dolor sit amet consectetur."                
-           HorizontalOptions="Fill" 
-           BackgroundColor="#D9D9D9"
-           Clicked="C_Clicked"
-           TextColor="Black"
-          FontSize="15"
-          CornerRadius="20"/>
-
-            <Button
-                WidthRequest="300"
-    Margin="10,0,0,0"
-           x:Name="D"
-           Text="D. Lorem ipsum dolor sit amet consectetur."                
-           HorizontalOptions="Fill" 
-           BackgroundColor="#D9D9D9"
-           Clicked="D_Clicked"
-           TextColor="Black"
-          FontSize="15"
-          CornerRadius="20"/>
-
-            <Button
-                             x:Name="Submit"
-                             Text="Submit"   
+                             x:Name="NewGame"
+                             Text="New Game"   
+                Clicked="NewGame_Clicked"
                 WidthRequest="300"
                              HorizontalOptions="Fill" 
                              BackgroundColor="#F8C630"
-                             Clicked="Submit_Clicked_1"
                              TextColor="#451F55"
                             FontAttributes="Bold"
                             FontSize="20"
