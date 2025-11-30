@@ -24,53 +24,80 @@
 
             <Border BackgroundColor="#451F55"                       
                        Padding="18" 
-                    HeightRequest="600"
+                    HeightRequest="300"
+                  
                     Stroke="Transparent">
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="20" />
 
                 </Border.StrokeShape>
 
-                <VerticalStackLayout>
-                    <Border Padding="0" Margin="0,0,0,50"
+                <VerticalStackLayout   VerticalOptions="Center">
+                    <HorizontalStackLayout>
+                        <Border Padding="0" Margin="0,0,10,50"
                                BackgroundColor="#D9D9D9"
                                
-                               HeightRequest="44">
-                        <Border.StrokeShape>
-                            <RoundRectangle CornerRadius="20"/>
-                        </Border.StrokeShape>
+                               HeightRequest="44"
+                                WidthRequest="250">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="20"/>
+                            </Border.StrokeShape>
 
-                        <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                            <Label FontSize="20" FontAttributes="Bold" TextColor="#EDB856" Text="1."></Label>
-                            <Label FontSize="20" x:Name="wyniki_1" Text="Lorem ipsum." TextColor="#22162B"></Label>
-                        </HorizontalStackLayout>
-
-
-                    </Border>
+                            <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                                <Label FontSize="20" FontAttributes="Bold" TextColor="#EDB856" Text="1."></Label>
+                                <Label FontSize="20" x:Name="wyniki_1" Text="Lorem ipsum." TextColor="#22162B"></Label>
+                            </HorizontalStackLayout>
 
 
-                    <Border Padding="0" Margin="0,0,0,50"
-            BackgroundColor="#D9D9D9"            
-            HeightRequest="44">
-                        <Border.StrokeShape>
-                            <RoundRectangle CornerRadius="20"/>
-                        </Border.StrokeShape>
+                        </Border>
+                        <Border Padding="0" Margin="0,0,0,50"
+                                BackgroundColor="#D9D9D9"            
+                                   HeightRequest="44"
+                                WidthRequest="44">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="20"/>
+                            </Border.StrokeShape>
+                            <Label VerticalOptions="Center" HorizontalOptions="Center" FontSize="20" x:Name="punkty_1" FontAttributes="Bold" TextColor="Black" Text="0"></Label>
+                        </Border>
+                    </HorizontalStackLayout>
 
-                        <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                            <Label FontSize="20" FontAttributes="Bold" TextColor="#838383" Text="2."></Label>
-                            <Label FontSize="20" x:Name="wyniki_2" Text="Lorem ipsum." TextColor="#22162B"></Label>
-                        </HorizontalStackLayout>
+                    <HorizontalStackLayout>
+                        <Border Padding="0" Margin="0,0,10,50"
+            BackgroundColor="#D9D9D9"
+            
+            HeightRequest="44"
+             WidthRequest="250">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="20"/>
+                            </Border.StrokeShape>
+
+                            <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                                <Label FontSize="20" FontAttributes="Bold" TextColor="#838383" Text="2."></Label>
+                                <Label FontSize="20" x:Name="wyniki_2" Text="Lorem ipsum." TextColor="#22162B"></Label>
+                            </HorizontalStackLayout>
 
 
-                    </Border>
+                        </Border>
+                        <Border Padding="0" Margin="0,0,0,50"
+             BackgroundColor="#D9D9D9"            
+                HeightRequest="44"
+             WidthRequest="44">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="20"/>
+                            </Border.StrokeShape>
+                            <Label VerticalOptions="Center" HorizontalOptions="Center" FontSize="20" x:Name="punkty_2" FontAttributes="Bold" TextColor="Black" Text="0"></Label>
+                        </Border>
+                    </HorizontalStackLayout>
+
+
                 </VerticalStackLayout>
 
             </Border>
 
 
             <Button
-                             x:Name="NewGame"
-                             Text="New Game"   
+             x:Name="NewGame"
+             Text="New Game"   
                 Clicked="NewGame_Clicked"
                 WidthRequest="300"
                              HorizontalOptions="Fill" 
@@ -81,11 +108,8 @@
                             CornerRadius="20"
                 Shadow="#401A50, 10,10"/>
 
-
-
-
-
         </VerticalStackLayout>
     </ScrollView>
+
 
 </ContentPage>

@@ -45,9 +45,29 @@ public partial class QuizPage : ContentPage
         await Navigation.PopAsync();
     }
 
-    private void Submit_Clicked(object sender, EventArgs e)
+    private async void Submit_Clicked(object sender, EventArgs e)
     {
-        whichPlayer = true;
+        if(whichPlayer == false)
+        {
+            whichPlayer = true;
+            ShowQuestion();
+        }
+        else
+        {
+            currentIndex++;
+
+            if (currentIndex >= questions.Count)
+            {
+                await Navigation.PushAsync(new LiderBoard());
+            }
+            else
+            {
+                ShowQuestion();
+            }
+        }
+
+        
+       
 
     }
 
@@ -55,6 +75,12 @@ public partial class QuizPage : ContentPage
     {
         var data = await LoadQuestions();
         questions = data.Questions;
+        ShowQuestion();
+        
+    }
+
+    private void ShowQuestion()
+    {
         var q = questions[currentIndex];
         var buttons = new List<Button> { button1, button2, button3, button4 };
         question.Text = q.QuestionText;
@@ -64,9 +90,10 @@ public partial class QuizPage : ContentPage
             {
                 buttons[i].Text = q.Answers[i];
                 buttons[i].BackgroundColor = Color.FromArgb("#D9D9D9");
-            }    
+            }
         }
     }
+
     private void A_Clicked(object sender, EventArgs e)
     {
         if (whichAnswer == true) { }
@@ -74,6 +101,14 @@ public partial class QuizPage : ContentPage
         {
             whichAnswer = true;
             button1.BackgroundColor = Color.FromArgb("#E54F6D");
+            if (whichPlayer == false)
+            {
+                Player.Instance.Player1Score += 1;
+            }
+            else
+            {
+                Player.Instance.Player2Score += 1;
+            }
         }
         
     }
@@ -85,6 +120,14 @@ public partial class QuizPage : ContentPage
         {
             whichAnswer = true;
             button2.BackgroundColor = Color.FromArgb("#E54F6D");
+            if (whichPlayer == false)
+            {
+                Player.Instance.Player1Score += 1;
+            }
+            else
+            {
+                Player.Instance.Player2Score += 1;
+            }
         }
     }
 
@@ -95,6 +138,14 @@ public partial class QuizPage : ContentPage
         {
             whichAnswer = true;
             button3.BackgroundColor = Color.FromArgb("#E54F6D");
+            if (whichPlayer == false)
+            {
+                Player.Instance.Player1Score += 1;
+            }
+            else
+            {
+                Player.Instance.Player2Score += 1;
+            }
         }
     }
 
@@ -105,6 +156,14 @@ public partial class QuizPage : ContentPage
         {
             whichAnswer = true;
             button4.BackgroundColor = Color.FromArgb("#E54F6D");
+            if (whichPlayer == false)
+            {
+                Player.Instance.Player1Score += 1;
+            }
+            else
+            {
+                Player.Instance.Player2Score += 1;
+            }
         }
     }
 }
