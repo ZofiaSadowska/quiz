@@ -47,10 +47,16 @@ public partial class QuizPage : ContentPage
 
     private async void Submit_Clicked(object sender, EventArgs e)
     {
-        if(whichPlayer == false)
+        if (whichPlayer == false)
         {
-            whichPlayer = true;
-            ShowQuestion();
+            if (whichPlayer == false)
+            {
+                whichPlayer = true;
+                whichAnswer = false;
+                ResetButtonColors();
+                ShowQuestion();
+                return;
+            }
         }
         else
         {
@@ -65,10 +71,14 @@ public partial class QuizPage : ContentPage
                 ShowQuestion();
             }
         }
+    }
 
-        
-       
-
+    private void ResetButtonColors()
+    {
+        button1.BackgroundColor = Color.FromArgb("#D9D9D9");
+        button2.BackgroundColor = Color.FromArgb("#D9D9D9");
+        button3.BackgroundColor = Color.FromArgb("#D9D9D9");
+        button4.BackgroundColor = Color.FromArgb("#D9D9D9");
     }
 
     private async void LoadAndStart()
@@ -81,6 +91,11 @@ public partial class QuizPage : ContentPage
 
     private void ShowQuestion()
     {
+        whichAnswer = false;
+        button1.BackgroundColor = Color.FromArgb("#D9D9D9");
+        button2.BackgroundColor = Color.FromArgb("#D9D9D9");
+        button3.BackgroundColor = Color.FromArgb("#D9D9D9");
+        button4.BackgroundColor = Color.FromArgb("#D9D9D9");
         var q = questions[currentIndex];
         var buttons = new List<Button> { button1, button2, button3, button4 };
         question.Text = q.QuestionText;
@@ -94,76 +109,48 @@ public partial class QuizPage : ContentPage
         }
     }
 
-    private void A_Clicked(object sender, EventArgs e)
+
+    private void AnswerClicked(string chosenAnswer, Button clickedButton)
     {
-        if (whichAnswer == true) { }
+        if (whichAnswer) return;
+
+        whichAnswer = true;
+
+        var q = questions[currentIndex];
+
+        if (chosenAnswer == q.Correct)
+        {
+            if (whichPlayer == false)
+                Player.Instance.Player1Score++;
+            else
+                Player.Instance.Player2Score++;
+        }
         else
         {
-            whichAnswer = true;
-            button1.BackgroundColor = Color.FromArgb("#E54F6D");
-            if (whichPlayer == false)
-            {
-                Player.Instance.Player1Score += 1;
-            }
-            else
-            {
-                Player.Instance.Player2Score += 1;
-            }
+
+           
         }
-        
+    }
+
+    private void A_Clicked(object sender, EventArgs e)
+    {
+        AnswerClicked(button1.Text, button1);
+
     }
 
     private void B_Clicked(object sender, EventArgs e)
     {
-        if (whichAnswer == true) { }
-        else
-        {
-            whichAnswer = true;
-            button2.BackgroundColor = Color.FromArgb("#E54F6D");
-            if (whichPlayer == false)
-            {
-                Player.Instance.Player1Score += 1;
-            }
-            else
-            {
-                Player.Instance.Player2Score += 1;
-            }
-        }
+        AnswerClicked(button2.Text, button2);
     }
 
     private void C_Clicked(object sender, EventArgs e)
     {
-        if (whichAnswer == true) { }
-        else
-        {
-            whichAnswer = true;
-            button3.BackgroundColor = Color.FromArgb("#E54F6D");
-            if (whichPlayer == false)
-            {
-                Player.Instance.Player1Score += 1;
-            }
-            else
-            {
-                Player.Instance.Player2Score += 1;
-            }
-        }
+        AnswerClicked(button3.Text, button3);
     }
 
     private void D_Clicked(object sender, EventArgs e)
     {
-        if (whichAnswer == true) { }
-        else
-        {
-            whichAnswer = true;
-            button4.BackgroundColor = Color.FromArgb("#E54F6D");
-            if (whichPlayer == false)
-            {
-                Player.Instance.Player1Score += 1;
-            }
-            else
-            {
-                Player.Instance.Player2Score += 1;
-            }
-        }
+        AnswerClicked(button4.Text, button4);
+    
     }
 }
