@@ -98,8 +98,11 @@ public partial class QuizPage : ContentPage
         button4.BackgroundColor = Color.FromArgb("#D9D9D9");
         var q = questions[currentIndex];
         question.Text = q.QuestionText;
+        button1.Text = q.Answers[0];
+        button2.Text = q.Answers[1];
+        button3.Text = q.Answers[2];
+        button4.Text = q.Answers[3];
 
-        
     }
 
 
@@ -121,8 +124,8 @@ public partial class QuizPage : ContentPage
         else
         {
 
-           
         }
+        
     }
 
     private void A_Clicked(object sender, EventArgs e)
