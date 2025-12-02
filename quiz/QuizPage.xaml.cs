@@ -20,7 +20,7 @@ public partial class QuizPage : ContentPage
     private List<Question> questions;
     int currentIndex = 0;
 
-    public QuizPage( )
+    public QuizPage()
 	{
 		InitializeComponent();
         
@@ -97,16 +97,9 @@ public partial class QuizPage : ContentPage
         button3.BackgroundColor = Color.FromArgb("#D9D9D9");
         button4.BackgroundColor = Color.FromArgb("#D9D9D9");
         var q = questions[currentIndex];
-        var buttons = new List<Button> { button1, button2, button3, button4 };
         question.Text = q.QuestionText;
-        for (int i = 0; i < buttons.Count; i++)
-        {
-            if (i < q.Answers.Count)
-            {
-                buttons[i].Text = q.Answers[i];
-                buttons[i].BackgroundColor = Color.FromArgb("#D9D9D9");
-            }
-        }
+
+        
     }
 
 
