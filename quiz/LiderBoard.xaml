@@ -12,14 +12,15 @@
 
             <Label
                 x:Name="LiderBoard1"
-                Text="Lider board"
+                Text="Leader board"
                 TextColor="#F8C630"
                 FontSize="40"
                 FontAttributes="Bold"
               HorizontalOptions="Center"
-                Margin="0,40,0,0"
-                  Shadow="#401A50, 5,5"
-                />
+                Margin="0,40,0,0"  />
+            <!--Shadow="#401A50, 5,5"-->
+
+
 
 
             <Border BackgroundColor="#451F55"                       
@@ -106,7 +107,8 @@
                             FontAttributes="Bold"
                             FontSize="20"
                             CornerRadius="20"
-                 Shadow="#401A50, 10,10"/>
+                 />
+            <!--Shadow="#401A50, 10,10"-->
 
         </VerticalStackLayout>
     </ScrollView>

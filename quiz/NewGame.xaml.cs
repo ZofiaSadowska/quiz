@@ -19,6 +19,6 @@ public partial class NewGame : ContentPage
 
     private async void Cofnij_Clicked(object sender, EventArgs e)
     {
-        await Navigation.PopAsync();
+        await Navigation.PushAsync(new MainPage());
     }
 }

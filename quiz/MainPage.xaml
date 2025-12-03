@@ -16,8 +16,9 @@
                 FontAttributes="Bold"
                 HorizontalOptions="Center"
                 Margin="0,130,0,130"
-                   Shadow="#F1F1F1F, 5,5"
+                   
                 />
+            <!--Shadow="#F1F1F1F, 5,5"-->
 
 
             <Button
@@ -28,7 +29,8 @@
                 TextColor="#E54F6D"
                 FontAttributes="Bold" 
                 Clicked="StartButton_Clicked" 
-                 Shadow="#F1F1F1F, 5,5"/>
+                 />
+            <!--Shadow="#F1F1F1F, 5,5"-->
 
             <Button
                 x:Name="LiderBoard"
@@ -38,7 +40,8 @@
                 TextColor="#E54F6D"
                 FontAttributes="Bold" 
                 Clicked="LiderBoard_Clicked"
-                 Shadow="#F1F1F1F, 5,5"/>
+                 />
+            <!--Shadow="#F1F1F1F, 5,5"-->
         </VerticalStackLayout>
     </ScrollView>
 

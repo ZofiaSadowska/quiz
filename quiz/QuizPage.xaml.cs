@@ -46,24 +46,24 @@ public partial class QuizPage : ContentPage
 
     private async void Cofnij_Clicked(object sender, EventArgs e)
     {
-        await Navigation.PopAsync();
+        await Navigation.PushAsync(new NewGame());
     }
 
     private async void Submit_Clicked(object sender, EventArgs e)
     {
-        
-        
-            if (whichPlayer == false)
-            {
-                whichPlayer = true;
-                whichAnswer = false;
-                ResetButtonColors();
-                ShowQuestion();
-                return;
-            }
-        
-        else
+
+        if (whichPlayer == false)
         {
+            whichPlayer = true;
+            whichAnswer = false;
+            ResetButtonColors();
+            ShowQuestion();
+            return;
+        }
+        
+        else if(whichPlayer == true)
+        {
+            whichPlayer = false;
             currentIndex++;
 
             if (currentIndex >= questions.Count)
@@ -72,6 +72,7 @@ public partial class QuizPage : ContentPage
             }
             else
             {
+
                 ShowQuestion();
             }
         }
