@@ -14,7 +14,8 @@
                 TextColor="#E54F6D"
                 FontSize="40"
                 FontAttributes="Bold"
-              HorizontalOptions="Center"/>
+              HorizontalOptions="Center"
+                Shadow="#401A50, 5,5"/>
 
             <Border BackgroundColor="#451F55"                       
                        Padding="18" 

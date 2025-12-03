@@ -18,6 +18,7 @@
                 FontAttributes="Bold"
               HorizontalOptions="Start"
                 Margin="40,0,0,0"
+                Shadow="#401A50, 5,5"
                 />
 
             <Border BackgroundColor="#D9D9D9"                       
@@ -48,6 +49,7 @@
                       TextColor="Black"
                      FontSize="15"
                      CornerRadius="20"
+                Shadow="#401A50, 5,5"
                 />
 
             <Button
@@ -60,7 +62,8 @@
                 Clicked="B_Clicked"
                 TextColor="Black"
                 FontSize="15"
-                CornerRadius="20"/>
+                CornerRadius="20"
+                Shadow="#401A50, 5,5"/>
 
             <Button
                 WidthRequest="300"
@@ -72,7 +75,8 @@
                 Clicked="C_Clicked"
                 TextColor="Black"
                 FontSize="15"
-                CornerRadius="20"/>
+                CornerRadius="20"
+                Shadow="#401A50, 5,5"/>
 
             <Button
                 WidthRequest="300"
@@ -84,7 +88,8 @@
                 Clicked="D_Clicked"
                 TextColor="Black"
                 FontSize="15"
-                CornerRadius="20"/>
+                CornerRadius="20"
+                Shadow="#401A50, 5,5"/>
 
             <Button
                 x:Name="Submit"
@@ -97,6 +102,7 @@
                 FontAttributes="Bold"
                 FontSize="20"
                 CornerRadius="20"
+                Shadow="#401A50, 5,5"
                 />
 
 

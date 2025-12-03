@@ -9,21 +9,25 @@ public partial class QuizPage : ContentPage
 {
     public async Task<QuestionSet> LoadQuestions()
     {
-        using var stream = await FileSystem.OpenAppPackageFileAsync("pytnia.json");
-        using var reader = new StreamReader(stream);
+        var stream = await FileSystem.OpenAppPackageFileAsync("pytnia.json");
+        using (var reader = new StreamReader(stream))
+        {
+            string json = await reader.ReadToEndAsync();
 
-        string json = reader.ReadToEnd();
+            var questionSet = JsonSerializer.Deserialize<QuestionSet>(json);
 
-        return JsonSerializer.Deserialize<QuestionSet>(json);
+            return questionSet;
+        }
     }
 
-    private List<Question> questions;
+
+    public List<Question> questions;
     int currentIndex = 0;
 
     public QuizPage()
 	{
 		InitializeComponent();
-        
+        questions = new();
 
         if (whichPlayer == false)
         {
@@ -47,8 +51,8 @@ public partial class QuizPage : ContentPage
 
     private async void Submit_Clicked(object sender, EventArgs e)
     {
-        if (whichPlayer == false)
-        {
+        
+        
             if (whichPlayer == false)
             {
                 whichPlayer = true;
@@ -57,7 +61,7 @@ public partial class QuizPage : ContentPage
                 ShowQuestion();
                 return;
             }
-        }
+        
         else
         {
             currentIndex++;
@@ -91,6 +95,14 @@ public partial class QuizPage : ContentPage
 
     private void ShowQuestion()
     {
+        if (whichPlayer == false)
+        {
+            player_name.Text = Player.Instance.Player1Name;
+        }
+        else
+        {
+            player_name.Text = Player.Instance.Player2Name;
+        }
         whichAnswer = false;
         button1.BackgroundColor = Color.FromArgb("#D9D9D9");
         button2.BackgroundColor = Color.FromArgb("#D9D9D9");
@@ -113,7 +125,7 @@ public partial class QuizPage : ContentPage
         whichAnswer = true;
 
         var q = questions[currentIndex];
-
+        clickedButton.BackgroundColor = Color.FromArgb("E54F6D");
         if (chosenAnswer == q.Correct)
         {
             if (whichPlayer == false)
